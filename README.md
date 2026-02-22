@@ -1,6 +1,6 @@
 # Marce Romero Portfolio (Next.js)
 
-Fresh Next.js rebuild of the portfolio with automatic GitHub Pages deployment from `dev`.
+Fresh Next.js rebuild of the portfolio with automatic GitHub Pages deployment from `master`.
 
 ## Stack
 
@@ -39,7 +39,8 @@ Node 22 is required (`.nvmrc` included).
 
 ## Deployment
 
-- Push to `dev` branch.
+- Work on `dev` branch.
+- Deploy only when changes are merged/pushed to `master`.
 - GitHub Actions builds static files (`next build` with `output: "export"`).
 - Workflow deploys `out/` to GitHub Pages automatically.
 
