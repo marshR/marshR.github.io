@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --bg: #f5f3ed;
   --surface: #ffffff;
@@ -5,212 +7,6 @@
   --text: #1c1b19;
   --muted: #5c5e64;
   --accent: #b4371a;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
-  color: var(--text);
-  background: radial-gradient(circle at 0 0, #f4c9bc 0%, var(--bg) 38%), linear-gradient(180deg, #f9f7f2 0%, #f2eee4 100%);
-  line-height: 1.5;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0 0 0.85rem;
-  font-family: "Sora", "Trebuchet MS", sans-serif;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-}
-
-h2 {
-  font-size: clamp(1.4rem, 3vw, 2rem);
-}
-
-p,
-li {
-  color: var(--muted);
-}
-
-a {
-  color: inherit;
-}
-
-.container {
-  width: min(1040px, calc(100% - 2rem));
-  margin: 0 auto;
-}
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
-}
-
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-  background: #fff;
-  border: 2px solid var(--accent);
-  padding: 0.45rem 0.75rem;
-  border-radius: 8px;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  background: color-mix(in hsl, var(--bg) 88%, transparent);
-  border-bottom: 1px solid color-mix(in hsl, var(--line) 70%, transparent);
-}
-
-.nav-wrap {
-  min-height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.logo {
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.nav {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.nav a {
-  text-decoration: none;
-  border-radius: 999px;
-  padding: 0.4rem 0.75rem;
-}
-
-.nav a:hover,
-.nav a:focus-visible {
-  background: #ece4d6;
-}
-
-.section {
-  padding: 3.2rem 0;
-}
-
-.hero {
-  padding-top: 4rem;
-}
-
-.kicker {
-  display: inline-block;
-  padding: 0.45rem 0.7rem;
-  border: 1px solid #edc3b6;
-  border-radius: 999px;
-  background: #fff2ed;
-  color: #8b2b17;
-}
-
-.lead {
-  font-size: clamp(1rem, 2.2vw, 1.22rem);
-  max-width: 68ch;
-}
-
-.meta {
-  margin-top: 0.8rem;
-}
-
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1.15rem;
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--text);
-  padding: 0.72rem 1rem;
-  border-radius: 12px;
-  font-weight: 600;
-}
-
-.btn.primary {
-  background: var(--accent);
-  color: #fff6f2;
-  border-color: var(--accent);
-}
-
-.proof {
-  margin: 1.5rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 0.8rem;
-}
-
-.proof li,
-.card {
-  border: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: 14px;
-  padding: 1rem;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-}
-
-.text-link {
-  color: var(--accent);
-  font-weight: 600;
-  text-underline-offset: 3px;
-}
-
-.bullets {
-  margin: 0;
-  padding-left: 1.1rem;
-}
-
-.stack {
-  display: grid;
-  gap: 1rem;
-}
-
-.site-footer {
-  border-top: 1px solid var(--line);
-  margin-top: 2.5rem;
-  padding: 1.4rem 0;
-}
-
-@media (max-width: 720px) {
-  .nav-wrap {
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.8rem 0;
-  }
-
-  .hero {
-    padding-top: 2.2rem;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -222,13 +18,88 @@ a {
     --muted: #d1c7be;
     --accent: #ef6b4b;
   }
+}
 
-  body {
-    background: radial-gradient(circle at 0 0, #4d2e27 0%, var(--bg) 38%), linear-gradient(180deg, #1b1512 0%, #120f0d 100%);
+@layer base {
+  * {
+    box-sizing: border-box;
   }
 
-  .nav a:hover,
-  .nav a:focus-visible {
-    background: #322720;
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+    background:
+      radial-gradient(circle at 0 0, #f4c9bc 0%, var(--bg) 38%),
+      linear-gradient(180deg, #f9f7f2 0%, #f2eee4 100%);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Sora", "Trebuchet MS", sans-serif;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  p,
+  li {
+    color: var(--muted);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background:
+        radial-gradient(circle at 0 0, #4d2e27 0%, var(--bg) 38%),
+        linear-gradient(180deg, #1b1512 0%, #120f0d 100%);
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 50;
+    border-radius: 0.5rem;
+    border: 2px solid var(--accent);
+    background: white;
+    padding: 0.45rem 0.75rem;
+    color: #111;
+  }
+
+  .chip {
+    border: 1px solid #edc3b6;
+    background: #fff2ed;
+    color: #8b2b17;
+  }
+
+  .panel {
+    border: 1px solid var(--line);
+    background: color-mix(in hsl, var(--surface) 96%, transparent);
+    border-radius: 0.875rem;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff6f2;
+    border: 1px solid var(--accent);
+  }
+
+  .btn-muted {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
   }
 }

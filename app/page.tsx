@@ -1,71 +1,69 @@
 import Link from "next/link";
+import { ButtonLink } from "./components/ui/button-link";
+import { Card } from "./components/ui/card";
+import { Section } from "./components/ui/section";
+import { PROJECT_CASE_STUDIES } from "./lib/projects";
 
 export default function HomePage() {
   return (
     <>
-      <section className="section hero">
-        <p className="kicker">
+      <Section className="pt-16 sm:pt-20">
+        <p className="chip inline-block rounded-full px-3 py-2 text-sm font-medium">
           Frontend / UI Developer — I ship clean, reliable interfaces and I’m the person you want
           when the UI is “almost right” but not quite.
         </p>
-        <h1>Hi, I’m Marce.</h1>
-        <p className="lead">
+
+        <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">Hi, I’m Marce.</h1>
+
+        <p className="mt-5 max-w-3xl text-lg">
           I’m a frontend / UI developer. I work on production websites and dashboards — shipping UI
           updates, debugging messy stuff, and making layouts consistent across devices.
         </p>
-        <p className="lead">
+        <p className="mt-4 max-w-3xl text-lg">
           I’ve spent the last few years deep in WordPress ecosystems (Elementor/ACF + custom
           fixes), and I’m also comfortable building clean UI with modern frontend tooling when
           that’s the right move.
         </p>
-        <div className="cta-row">
-          <Link className="btn primary" href="/projects">
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <ButtonLink href="/projects" variant="primary">
             See projects
-          </Link>
-          <Link className="btn" href="/resume">
-            Download CV
-          </Link>
+          </ButtonLink>
+          <ButtonLink href="/resume">Download CV</ButtonLink>
         </div>
-        <p className="meta">Remote (MX) · English/Spanish · Available for UI / Frontend roles</p>
 
-        <ul className="proof">
-          <li>WordPress (Elementor, ACF, multi-site setups)</li>
-          <li>HTML/CSS/JS (+ Tailwind when needed)</li>
-          <li>UI QA, cross-browser fixes, responsive cleanup</li>
-          <li>Documentation + process (I don’t “just patch it”)</li>
+        <p className="mt-4 text-sm">Remote (MX) · English/Spanish · Available for UI / Frontend roles</p>
+
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <li className="panel p-4">WordPress (Elementor, ACF, multi-site setups)</li>
+          <li className="panel p-4">HTML/CSS/JS (+ Tailwind when needed)</li>
+          <li className="panel p-4">UI QA, cross-browser fixes, responsive cleanup</li>
+          <li className="panel p-4">Documentation + process (I don’t “just patch it”)</li>
         </ul>
-      </section>
+      </Section>
 
-      <section className="section">
-        <h2>Featured projects</h2>
-        <div className="cards">
-          <article className="card">
-            <h3>WordPress template system / migration</h3>
-            <p>Reusable templates + consistent layouts that are easier to maintain.</p>
-            <Link className="text-link" href="/projects#wp-templates">
-              Read
-            </Link>
-          </article>
-          <article className="card">
-            <h3>Production UI bug fixing</h3>
-            <p>Cross-browser + responsive fixes on real customer sites.</p>
-            <Link className="text-link" href="/projects#ui-debugging">
-              Read
-            </Link>
-          </article>
-          <article className="card">
-            <h3>Landing pages + documentation</h3>
-            <p>Fast delivery + clear internal workflows for repeatable updates.</p>
-            <Link className="text-link" href="/projects#landing-docs">
-              Read
-            </Link>
-          </article>
+      <Section>
+        <h2 className="text-3xl font-bold tracking-tight">Featured projects</h2>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {PROJECT_CASE_STUDIES.map((project) => (
+            <Card key={project.id} className="p-5">
+              <h3 className="text-xl font-semibold">{project.title.replace(/^Project \d+ — /, "")}</h3>
+              <p className="mt-2">{project.blurb}</p>
+              <Link
+                className="mt-4 inline-block text-sm font-semibold text-[var(--accent)] underline"
+                href={`/projects#${project.id}`}
+              >
+                Read
+              </Link>
+            </Card>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      <section className="section">
-        <h2>How I work</h2>
-        <ul className="bullets">
+      <Section>
+        <h2 className="text-3xl font-bold tracking-tight">How I work</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-5">
           <li>I’m big on shipping clean UI, not “close enough.”</li>
           <li>
             I debug fast by isolating what’s actually breaking (CSS rules, JS conflicts,
@@ -74,33 +72,31 @@ export default function HomePage() {
           <li>I do a real QA pass: responsive + browser sanity + edge cases.</li>
           <li>I leave things more maintainable than I found them (docs, patterns, fewer one-offs).</li>
         </ul>
-      </section>
+      </Section>
 
-      <section className="section">
-        <h2>About</h2>
-        <p>
+      <Section>
+        <h2 className="text-3xl font-bold tracking-tight">About</h2>
+        <p className="mt-4 max-w-3xl">
           I’ve worked across agency + product-ish environments, usually in the middle of “design
           wants X” and “production reality says Y.” I’m comfortable collaborating with
           designers/devs, handling support-style debugging, and also doing the more intentional UI
           work like layout systems and reusable sections.
         </p>
-      </section>
+      </Section>
 
-      <section className="section">
-        <h2>Let’s talk</h2>
-        <p>
+      <Section>
+        <h2 className="text-3xl font-bold tracking-tight">Let’s talk</h2>
+        <p className="mt-4 max-w-3xl">
           If you’re hiring and need someone who can own UI quality, move fast, and not break the
           site in the process — let’s talk.
         </p>
-        <div className="cta-row">
-          <Link className="btn primary" href="/contact">
+        <div className="mt-6 flex flex-wrap gap-3">
+          <ButtonLink href="/contact" variant="primary">
             Email me
-          </Link>
-          <Link className="btn" href="/resume">
-            Download CV
-          </Link>
+          </ButtonLink>
+          <ButtonLink href="/resume">Download CV</ButtonLink>
         </div>
-      </section>
+      </Section>
     </>
   );
 }

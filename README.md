@@ -6,7 +6,8 @@ Fresh Next.js rebuild of the portfolio with automatic GitHub Pages deployment fr
 
 - Next.js App Router
 - TypeScript
-- Plain CSS (`app/globals.css`)
+- Tailwind CSS v4 (`@import "tailwindcss"`)
+- Small global token layer in `app/globals.css`
 - GitHub Actions Pages deploy
 
 ## Project structure
@@ -14,7 +15,15 @@ Fresh Next.js rebuild of the portfolio with automatic GitHub Pages deployment fr
 ```
 marshR.github.io/
 ├── app/
+│   ├── components/
+│   │   ├── nav-link.tsx
+│   │   └── ui/
+│   │       ├── button-link.tsx
+│   │       ├── card.tsx
+│   │       ├── page-header.tsx
+│   │       └── section.tsx
 │   ├── contact/page.tsx
+│   ├── lib/projects.ts
 │   ├── projects/page.tsx
 │   ├── resume/page.tsx
 │   ├── globals.css
@@ -22,6 +31,7 @@ marshR.github.io/
 │   └── page.tsx
 ├── public/
 ├── .github/workflows/deploy.yml
+├── postcss.config.mjs
 ├── next.config.mjs
 ├── package.json
 └── tsconfig.json
