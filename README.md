@@ -1,109 +1,50 @@
-# Marce Romero | UI Engineer Portfolio
+# Marce Romero Portfolio (Next.js)
 
-A personal portfolio website showcasing frontend development expertise, UI/UX work, and professional projects.
+Fresh Next.js rebuild of the portfolio with automatic GitHub Pages deployment from `dev`.
 
-## 📋 Overview
+## Stack
 
-This is a static portfolio site for Marce Romero, a **UI Specialist & Frontend Developer** with expertise in:
-- WordPress development (Elementor, ACF)
-- Modern HTML/CSS/JavaScript
-- React frameworks
-- UI QA & debugging
-- Responsive design
+- Next.js App Router
+- TypeScript
+- Plain CSS (`app/globals.css`)
+- GitHub Actions Pages deploy
 
-## 📁 Structure
+## Project structure
 
 ```
 marshR.github.io/
-├── index.html          # Homepage - introduction & featured projects
-├── projects.html       # Case studies & detailed project work
-├── resume.html         # Resume page with embedded PDF viewer
-└── README.md           # This file
+├── app/
+│   ├── contact/page.tsx
+│   ├── projects/page.tsx
+│   ├── resume/page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/
+├── .github/workflows/deploy.yml
+├── next.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-## 🚀 Pages
+## Local dev
 
-### **index.html** - Home Page
-The main landing page featuring:
-- Professional introduction
-- Navigation to projects and resume
-- Tech stack highlights (WordPress, Elementor, ACF, React, etc.)
-- Featured projects grid
-- Call-to-action buttons
-
-### **projects.html** - Projects & Case Studies
-In-depth project documentation including:
-- Project context and goals
-- Technical execution details
-- Key outcomes and metrics
-- Technology stack tags
-- Problem-solving approaches
-
-### **resume.html** - Resume Page
-- Embedded PDF resume viewer
-- Download button for PDF version
-- Technical summary section
-- Links to GitHub and other resources
-
-## 🎨 Design & Technology
-
-**Styling:**
-- Tailwind CSS (via CDN)
-- Modern, minimalist design
-- Mobile-responsive layouts
-- Smooth scrolling navigation
-
-**Markup:**
-- Semantic HTML5
-- Clean structure
-- Accessible navigation
-
-## 🔗 Navigation
-
-- **Home** → `/index.html`
-- **Projects** → `/projects.html`
-- **Resume** → `/resume.html` (with PDF download)
-- **GitHub** → `https://github.com/marshR`
-
-## 📊 Key Features
-
-✅ Responsive design (mobile, tablet, desktop)  
-✅ Fast loading (static HTML)  
-✅ No build process required  
-✅ Direct GitHub Pages deployment  
-✅ Professional portfolio showcase  
-
-## 🔧 Development
-
-No build tools or dependencies required. Simply edit `.html` files directly.
-
-To preview locally:
 ```bash
-python3 -m http.server 8000
+nvm use
+npm install
+npm run dev
 ```
-Then visit `http://localhost:8000`
 
-## 📝 Content Management
+Node 22 is required (`.nvmrc` included).
 
-All content is maintained directly in HTML files. To update:
-1. Edit the relevant `.html` file
-2. Update text, links, and project details
-3. Commit and push to GitHub
-4. Changes deploy automatically via GitHub Pages
+## Deployment
 
-## 📄 Resume
+- Push to `dev` branch.
+- GitHub Actions builds static files (`next build` with `output: "export"`).
+- Workflow deploys `out/` to GitHub Pages automatically.
 
-The resume is embedded as a PDF. Update `/resume.pdf` to change the displayed resume.
+## Notes
 
-## 🎯 Purpose
-
-This portfolio demonstrates:
-- Professional web development capabilities
-- Project execution and problem-solving
-- Technical communication skills
-- Modern web standards knowledge
-
----
-
-**Last Updated:** February 2026  
-**Repository:** https://github.com/marshR/marshR.github.io
+- Add your real `public/resume.pdf` so the resume download works.
+- Replace `marce@example.com` in `app/contact/page.tsx`.
+- If you ever move from user-site repo to project repo, `next.config.mjs` already handles base path in CI.
