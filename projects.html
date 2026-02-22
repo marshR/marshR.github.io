@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Marce Romero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-slate-900 font-sans selection:bg-blue-100">
+
+    <nav class="sticky top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-100 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-bold tracking-tight hover:text-blue-600 transition">← Back to Home</a>
+            <div class="flex gap-6 text-sm font-medium text-slate-600">
+                <a href="/resume.pdf" class="hover:text-blue-600 transition">Resume</a>
+                <a href="https://github.com/marshR" class="hover:text-blue-600 transition">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-5xl mx-auto pt-20 pb-12 px-6">
+        <h1 class="text-4xl font-extrabold mb-4">Project Case Studies</h1>
+        <p class="text-slate-500 text-lg">A deep dive into the technical challenges, workflows, and outcomes of my production work.</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pb-32 space-y-32">
+
+        <article class="grid md:grid-cols-3 gap-12 border-t border-slate-100 pt-16">
+            <aside class="space-y-6">
+                <div class="text-xs font-bold text-blue-600 uppercase tracking-widest">Empowerkit</div>
+                <h2 class="text-2xl font-bold">Template Migration System</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">WordPress</span>
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">Elementor</span>
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">ACF Patterns</span>
+                </div>
+            </aside>
+            <div class="md:col-span-2 prose prose-slate">
+                <h3 class="text-xl font-bold mb-4">Context & Goal</h3>
+                <p class="text-slate-600 mb-6">At Empowerkit, I managed customer sites where design consistency was critical for high-volume corporate launches. The goal was to rebuild legacy structures into a repeatable, modular system.</p>
+                
+                <h3 class="text-xl font-bold mb-4">Technical Execution</h3>
+                <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+                    <li>Migrated static headers/footers into dynamic Elementor Theme Builder templates.</li>
+                    <li>Developed custom ACF fields to allow non-technical clients to update specific site data without breaking layouts.</li>
+                    <li>Established a "Responsive First" QA checklist for all new template rollouts.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mb-4 italic text-emerald-600">The Outcome</h3>
+                <p class="text-slate-600 font-medium">Reduced site launch time by 30% through standardized sections and eliminated common CSS regressions across mobile breakpoints.</p>
+            </div>
+        </article>
+
+        <article class="grid md:grid-cols-3 gap-12 border-t border-slate-100 pt-16">
+            <aside class="space-y-6">
+                <div class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Production Support</div>
+                <h2 class="text-2xl font-bold">Cross-Browser Debugging</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">JS/jQuery</span>
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">CSS Regression</span>
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">BrowserStack</span>
+                </div>
+            </aside>
+            <div class="md:col-span-2 prose prose-slate">
+                <h3 class="text-xl font-bold mb-4">The Challenge</h3>
+                <p class="text-slate-600 mb-6">Identifying root causes for UI quirks in live environments—ranging from Safari-specific flexbox bugs to jQuery conflicts on legacy landing pages.</p>
+                
+                <h3 class="text-xl font-bold mb-4">My Approach</h3>
+                <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+                    <li>Isolated JS conflicts by auditing load orders and utilizing modern vanilla JS alternatives where possible.</li>
+                    <li>Fixed mobile navigation "jumpiness" caused by dynamic viewport heights (vh units) in production.</li>
+                    <li>Created a "Common Bugs" internal guide to speed up future troubleshooting.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mb-4 italic text-emerald-600">The Outcome</h3>
+                <p class="text-slate-600 font-medium">Stabilized UI behavior across all major browsers, significantly reducing the volume of support tickets related to mobile layout shifts.</p>
+            </div>
+        </article>
+
+        <article class="grid md:grid-cols-3 gap-12 border-t border-slate-100 pt-16">
+            <aside class="space-y-6">
+                <div class="text-xs font-bold text-purple-600 uppercase tracking-widest">Agency Workflow</div>
+                <h2 class="text-2xl font-bold">Landing Page Ops</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">Figma to Code</span>
+                    <span class="px-2 py-1 bg-slate-100 text-[10px] font-bold rounded uppercase">Documentation</span>
+                </div>
+            </aside>
+            <div class="md:col-span-2 prose prose-slate">
+                <h3 class="text-xl font-bold mb-4">Context</h3>
+                <p class="text-slate-600 mb-6">Fast-paced recruitment campaigns required landing pages that were both conversion-optimized and technically sound.</p>
+                
+                <h3 class="text-xl font-bold mb-4">The Process</h3>
+                <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+                    <li>Built lightweight, high-speed landing pages with a focus on core web vitals (LCP/CLS).</li>
+                    <li>Implemented clear internal manuals for content updates, allowing the marketing team to handle minor edits without developer intervention.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mb-4 italic text-emerald-600">The Outcome</h3>
+                <p class="text-slate-600 font-medium">Enabled 100% self-sufficiency for the non-technical team members on documented tasks, freeing up dev time for more complex automation work.</p>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="bg-slate-50 py-12 border-t border-slate-100">
+        <div class="max-w-5xl mx-auto px-6 text-center text-slate-500 text-sm">
+            © 2026 Marce Romero. Built with Vite, React, and Tailwind.
+        </div>
+    </footer>
+
+</body>
+</html>
